@@ -120,15 +120,15 @@ $(document).ready(function(){
 	
 	$('#project-viewer').addClass('add-slider');
 	
-	$('.project-item').click(function(e){
+	// $('.project-item').click(function(e){
 	
-		e.preventDefault();
+	// 	e.preventDefault();
 		
-		loadProject($(this));
+	// 	loadProject($(this));
 	
-		$('#project-viewer').modal({backdrop:false});
+	// 	$('#project-viewer').modal({backdrop:false});
 		
-	})
+	// })
 	
 	/*Prevent Navbar movement*/
 	$('#project-viewer').on('show.bs.modal',function(){
@@ -157,11 +157,11 @@ $(document).ready(function(){
 		$('.project-item').removeClass('active');
 		$project.addClass('active');
 		
-		var projectLink = $project.attr('href').replace(/[#?]/g, '');
+		var projectLink = $project.attr('link');
 		
 		window.location.hash = '?'+projectLink;
 		
-		$('#project-viewer-content').load(projectLink,function(){
+		$('#project-viewer-content').load('assets/pages/' + projectLink,function(){
 			$('#project-viewer .container').fadeIn(500);
 			afterLoadFn();
 		});
@@ -226,47 +226,47 @@ $(document).ready(function(){
 	/*============================================
 	Twitter
 	==============================================*/
-	var maxTweets = $('#twitter-slider').data('max-tweets'),
-		widgetID = $('#twitter-slider').data('widget-id');
+	// var maxTweets = $('#twitter-slider').data('max-tweets'),
+	// 	widgetID = $('#twitter-slider').data('widget-id');
 	
-	var configTweets = {
-	  "id": widgetID,
-	  "domId": '',
-	  "maxTweets": maxTweets,
-	  "enableLinks": true,
-	  "showUser": false,
-	  "showTime": true,
-	  "dateFunction": '',
-	  "showRetweet": false,
-	  "customCallback": handleTweets,
-	  "showInteraction": false
-	};
+	// var configTweets = {
+	//   "id": widgetID,
+	//   "domId": '',
+	//   "maxTweets": maxTweets,
+	//   "enableLinks": true,
+	//   "showUser": false,
+	//   "showTime": true,
+	//   "dateFunction": '',
+	//   "showRetweet": false,
+	//   "customCallback": handleTweets,
+	//   "showInteraction": false
+	// };
 	
-	twitterFetcher.fetch(configTweets);
+	// twitterFetcher.fetch(configTweets);
 
-	function handleTweets(tweets){
+	// function handleTweets(tweets){
 	
-		var x = tweets.length,
-			n = 0,
-			tweetsHtml = '<ul class="slides">';
+	// 	var x = tweets.length,
+	// 		n = 0,
+	// 		tweetsHtml = '<ul class="slides">';
 			
-		while(n < x) {
-			tweetsHtml += '<li>' + tweets[n] + '</li>';
-			n++;
-		}
+	// 	while(n < x) {
+	// 		tweetsHtml += '<li>' + tweets[n] + '</li>';
+	// 		n++;
+	// 	}
 		
-		tweetsHtml += '</ul>';
-		$('#twitter-slider').html(tweetsHtml);
+	// 	tweetsHtml += '</ul>';
+	// 	$('#twitter-slider').html(tweetsHtml);
 	
-		$('#twitter-slider').flexslider({
-			slideshowSpeed: 5000,
-			useCSS: true,
-			directionNav: false, 
-			pauseOnAction: false, 
-			pauseOnHover: true,
-			smoothHeight: false
-		});
-	}
+	// 	$('#twitter-slider').flexslider({
+	// 		slideshowSpeed: 5000,
+	// 		useCSS: true,
+	// 		directionNav: false, 
+	// 		pauseOnAction: false, 
+	// 		pauseOnHover: true,
+	// 		smoothHeight: false
+	// 	});
+	// }
 	/*============================================
 	Testimonials
 	==============================================*/

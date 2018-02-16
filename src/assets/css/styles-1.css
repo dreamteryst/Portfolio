@@ -444,14 +444,14 @@ hr{
 	transition: all .2s ease-in;
 }
 
-.service-item .fa{
+.service-item .fa, .service-item .fab{
 	font-size: 82px;
 	line-height: 180px;
 	-webkit-transition: all .3s ease-in;
 	transition: all .3s ease-in;
 }
 
-.service-item:hover .fa{
+.service-item:hover .fa, .service-item:hover .fab{
 	font-size: 112px;
 	-webkit-transform:rotate(-15deg);
 	transform:rotate(-30deg);

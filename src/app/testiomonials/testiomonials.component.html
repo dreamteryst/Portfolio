@@ -5,121 +5,23 @@ TESTIMONIALS
 
   <div class="container">
 
-    <h1 class="section-title">Happy Clients
+    <h1 class="section-title">High School
       <span class="main-color">5</span>
     </h1>
-    <p class="subtitle">See what people say about my work</p>
+    <p class="subtitle">See what I have done when I was a children.</p>
 
     <div class="row">
 
       <div class="col-lg-10 col-lg-offset-1 col-sm-12">
-
-
-        <div class="testimonial-controls">
-          <span class="previous">
-            <i class="fa fa-angle-left"></i>
-          </span>
-          <span class="next">
-            <i class="fa fa-angle-right"></i>
-          </span>
+        <pdf-viewer [src]="portfolio_path" [render-text]="true" (after-load-complete)="callBackFn($event)" 
+        [show-all]="false" [(page)]="page" [autoresize]="true" [fit-to-page]="true" style="display: block;"></pdf-viewer>
+        <div class="pdf-actions">
+          Page {{page}}/{{totalPage}}<br/><br/>
+          <button class="btn btn-danger" (click)="first()" [disabled]="page <= 1"><<</button>
+          <button class="btn btn-warning" (click)="back()" [disabled]="page <= 1">BACK</button>
+          <button class="btn btn-info" (click)="next()" [disabled]="page >= totalPage">NEXT</button>
+          <button class="btn btn-primary" (click)="last()" [disabled]="page >= totalPage">>></button>
         </div>
-
-        <div id="testimonials-slider" class="flexslider">
-
-          <ul class="slides">
-
-            <li>
-              <div class="media scrollimation fade-right">
-
-                <div class="media-left">
-
-                  <img class="media-object img-circle" src="assets/images/client-1.jpg" alt="">
-
-                </div>
-
-                <div class="media-body">
-
-                  <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus nec magna eget ultricies. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Nullam rhoncus nec magna eget ultricies. Class aptent taciti sociosqu ad litora torquent
-                    per conubia nostra</p>
-                  <p class="client">John Doe /
-                    <a href="#link">Google Inc.</a>
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div class="media scrollimation fade-left">
-
-                <div class="media-body">
-
-                  <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus nec magna eget ultricies. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra</p>
-                  <p class="client">John Doe /
-                    <a href="#link">Google Inc.</a>
-                  </p>
-
-                </div>
-
-                <div class="media-right">
-
-                  <img class="media-object img-circle" src="assets/images/client-2.jpg" alt="">
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-
-              <div class="media">
-
-                <div class="media-body">
-
-                  <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus nec magna eget ultricies. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra</p>
-                  <p class="client">John Doe /
-                    <a href="#link">Google Inc.</a>
-                  </p>
-
-                </div>
-
-                <div class="media-right">
-
-                  <img class="media-object img-circle" src="assets/images/client-3.jpg" alt="">
-
-                </div>
-
-              </div>
-
-              <div class="media">
-
-                <div class="media-left">
-
-                  <img class="media-object img-circle" src="assets/images/client-4.jpg" alt="">
-
-                </div>
-
-                <div class="media-body">
-
-                  <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus nec magna eget ultricies. Class
-                    aptent taciti sociosqu ad litora torquent per conubia nostra</p>
-                  <p class="client">John Doe /
-                    <a href="#link">Google Inc.</a>
-                  </p>
-
-                </div>
-
-              </div>
-
-            </li>
-
-          </ul>
-
-        </div>
-
       </div>
 
     </div>
@@ -128,7 +30,7 @@ TESTIMONIALS
 
 </section>
 
-<div class="white-bg">
+<!-- <div class="white-bg">
 
   <div class="container">
 
@@ -169,4 +71,4 @@ TESTIMONIALS
 
   </div>
 
-</div>
+</div> -->
