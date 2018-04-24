@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestiomonialsComponent implements OnInit {
 
-  private portfolio_path: string;
-  private page: number;
-  private totalPage: number;
+  public portfolio_path: string;
+  public page: number;
+  public totalPage: number;
 
   constructor() { }
 
